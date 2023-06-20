@@ -19,7 +19,7 @@
 
                 <li class="menu-title">Menu Utama</li>
                 <li>
-                    <a href="/dashboard" class="waves-effect"><i class="mdi mdi-home-analytics"></i><span>Dashboard</span></a>
+                    <a href="/admin" class="waves-effect"><i class="mdi mdi-home-analytics"></i><span>Dashboard</span></a>
                 </li>
                 <li class="menu-title">Feature Management</li>
 

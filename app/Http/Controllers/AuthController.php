@@ -17,8 +17,15 @@ class AuthController extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Login berhasil
-            return redirect()->intended('/admin');
+             // Login berhasil
+            $user = Auth::user();
+            
+            // Periksa peran pengguna
+            if ($user->role == 'Administrator') {
+                return redirect()->intended('/admin');
+            } elseif ($user->role == 'Siswa') {
+                return redirect()->intended('/siswa');
+            }
         } else {
             // Login gagal
             return redirect()->back()->withErrors(['username' => 'Username atau password salah']);
@@ -29,4 +36,8 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/login');
     } 
+    // Error Views
+    public function error(){
+        return view('error.index');
+    }
 }

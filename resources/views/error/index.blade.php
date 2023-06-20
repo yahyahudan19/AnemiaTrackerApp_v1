@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title> Login | AnemiaTrackerApp v1</title>
+    <title> 404 Halaman Tidak Ada ! | AnemiaTrackerApp v1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="AnemiaTrackerApp" name="description" />
     <meta content="Yahya Hudan" name="author" />
@@ -20,7 +20,7 @@
 </head>
 
 <body>
- 
+
     <div>
         <div class="container">
             <div class="row">
@@ -32,30 +32,20 @@
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center mb-5">
-                                            <a href="index.html" class="text-dark font-size-22 font-family-secondary">
+                                            <a href="/" class="text-dark font-size-22 font-family-secondary">
                                                 <i class="mdi mdi-alpha-x-circle"></i> <b>AnemiaTrackerApp</b>
                                             </a>
                                         </div>
-                                        <h1 class="h5 mb-1">Halo, Selamat Datang Kembali !</h1>
-                                        <p class="text-muted mb-4">Masukkan Username dan Password untuk mengakses Halaman Dashboard !</p>
-
-                                        <form class="user" method="POST" action="{{ route('auth') }}">
-                                            @csrf
-                                            <div class="form-group">
-                                                <input type="username" class="form-control form-control-user" id="username" name="username" placeholder="username">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
-                                            </div>
-                                            {{-- <a href="/dashboard" class="btn btn-success btn-block waves-effect waves-light"> Log In </a> --}}
-                                            <button class="btn btn-success btn-block waver-effect wavers-light" type="submit"> Log In</button>
-                                            
-                                        </form>
+                                        
+                                        <div class="text-center">
+                                            <img src="{{asset('template/dashboard/vertical/assets/images/404-error.svg')}}" alt="error" height="140">
+                                            <h1 class="h4 mb-3 mt-4">Page Not Found</h1>
+                                            <p class="text-muted mb-4 w-75 m-auto">It's looking like you may have taken a wrong turn. Don't worry... it happens to the best of us. Here's a little tip that might help you get back on track.</p>
+                                        </div>
 
                                         <div class="row mt-4">
                                             <div class="col-12 text-center">
-                                                <p class="text-muted mb-2"><a href="#" class="text-muted font-weight-medium ml-1">Forgot your password?</a></p>
-                                                <p class="text-muted mb-0">Don't have an account? <a href="/register" class="text-muted font-weight-medium ml-1"><b>Sign Up</b></a></p>
+                                                <a href="/" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-home mr-2"></i>Back to Home </a>
                                             </div> <!-- end col -->
                                         </div>
                                         <!-- end row -->
@@ -80,19 +70,6 @@
 
     <!-- App js -->
     <script src="{{asset('template/dashboard/vertical/assets/js/theme.js')}}"></script>
-
-    <!-- Sweet Alert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-    @if ($errors->any())
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Login Gagal',
-            text: '{{ $errors->first() }}',
-        });
-    </script>
-    @endif
 
 </body>
 

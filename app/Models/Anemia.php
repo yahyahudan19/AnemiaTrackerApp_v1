@@ -11,9 +11,9 @@ class Anemia extends Model
 
     protected $table = 'anemias';
     protected $primaryKey = 'id_anemia';
-    protected $fillable = ['tinggi_anemia','berat_anemia','riwayat_anemia','minum_anemia'];
+    protected $fillable = ['siswa_id','tinggi_anemia','berat_anemia','riwayat_anemia','minum_anemia'];
 
     public function siswa(){
-        return $this->hasMany(Siswa::class,'anemia_id');
+        return $this->belongsTo(Siswa::class,'siswa_id');
     }
 }

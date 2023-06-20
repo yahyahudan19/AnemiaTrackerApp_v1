@@ -101,6 +101,9 @@
         <!-- App js -->
         <script src="{{asset('template/dashboard/vertical/assets/js/theme.js')}}"></script>
 
+        <!-- Validation custom js-->
+        <script src="{{asset('template/dashboard/vertical/assets/pages/validation-demo.js')}}"></script>
+
         
     </body>
 
