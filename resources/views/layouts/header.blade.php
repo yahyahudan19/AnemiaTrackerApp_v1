@@ -150,7 +150,7 @@
                         </span> --}}
                     </a>
                     <a class="dropdown-item d-flex align-items-center justify-content-between"
-                        href="javascript:void(0)">
+                        href="/logout">
                         <span>Log Out</span>
                         <span>
                             <span class="badge badge-pill badge-danger">!</span>
