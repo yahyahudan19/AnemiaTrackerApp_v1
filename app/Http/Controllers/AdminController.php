@@ -8,6 +8,7 @@ use App\Models\Siswa;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use PDO;
+use Pdf;
 use PhpParser\Node\Stmt\TryCatch;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -63,11 +64,23 @@ class AdminController extends Controller
         }
 
     }
+    // Export PDF
+    public function anemiaExportPDF(){
+
+       
+    }
 
     // ================ Edukasi Management ================ // 
     //Views
     public function edukasiPage(){
-        return view('admin.edukasi.index');
+
+        $data_edukasi = Edukasi::all();
+
+        $jml_edukasi = Edukasi::all()->count();
+
+        return view('admin.edukasi.index',compact([
+            'data_edukasi','jml_edukasi'
+        ]));
     }
      // Detail
      public function edukasiDetail(){
@@ -113,6 +126,24 @@ class AdminController extends Controller
     }
     // Delete
     public function userDelete(){
+
+    }
+
+    // ================ Siswa Management ================ // 
+    // Views
+    public function siswaPage(){
+        return view('admin.siswa.index');
+    }
+    // Detail
+    public function siswaDetail(){
+        return view('admin.siswa.detail');
+    }
+    // Update
+    public function siswaUpdate(){
+        
+    }
+    // Delete
+    public function siswaDelete(){
 
     }
 }

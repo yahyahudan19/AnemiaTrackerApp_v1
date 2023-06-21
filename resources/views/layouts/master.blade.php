@@ -11,15 +11,18 @@
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('template/dashboard/vertical/assets/images/favicon.ico')}}">
-        
+
+         <!-- Add Your Plugin here : -->
+         @yield('plugins')
+
+         <!-- Dropify css -->
+        <link href="{{asset('template/dashboard/vertical/plugins/dropify/dropify.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App css -->
         <link href="{{asset('template/dashboard/vertical/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('template/dashboard/vertical/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('template/dashboard/vertical/assets/css/theme.min.css')}}" rel="stylesheet" type="text/css" />
 
-        <!-- Add Your Plugin here : -->
-        @yield('plugins')
-
+       
     </head>
 
     <body>
@@ -52,7 +55,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-right d-none d-sm-block">
-                                    Develop by Yahya
+                                    Develop by <a href="https://www.linkedin.com/in/yahyahudan19/" target="_blank" >Yahya Hudan</a>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +107,11 @@
         <!-- Validation custom js-->
         <script src="{{asset('template/dashboard/vertical/assets/pages/validation-demo.js')}}"></script>
 
-        
+         <!--dropify-->
+        <script src="{{asset('template/dashboard/vertical/plugins/dropify/dropify.min.js')}}"></script>
+
+        <!-- Init js-->
+        <script src="{{asset('template/dashboard/vertical/assets/pages/fileuploads-demo.js')}}"></script>
     </body>
 
 </html>

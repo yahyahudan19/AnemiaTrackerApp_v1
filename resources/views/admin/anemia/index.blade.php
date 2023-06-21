@@ -91,7 +91,7 @@ Anemia Management | Anemia Tracker App v1.0
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4">
-                            <span class="badge badge-soft-warning float-right">Tambah, Export atau Import </span>
+                            <span class="badge badge-soft-warning float-right">Tambah atau Export</span>
                             <h5 class="card-title mb-0">Action :</h5>
                         </div>
                         <div class="row d-flex align-items-center mb-6">
@@ -105,11 +105,11 @@ Anemia Management | Anemia Tracker App v1.0
                                     <button type="button" class="btn btn-warning waves-effect waves-light"><i class="mdi mdi-file-excel-box"></i>Export Data</button>
                                 </h2>
                             </div>
-                            <div class="col-4">
+                            {{-- <div class="col-4">
                                 <h2 class="d-flex align-items-center mb-0">
                                     <button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-file-excel"></i>Import Data</button>
                                 </h2>
-                            </div>
+                            </div> --}}
                         </div>
                         <br>
                         <div class="progress shadow-sm" style="height: 5px;">
