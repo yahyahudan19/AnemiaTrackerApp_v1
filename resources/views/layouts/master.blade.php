@@ -79,6 +79,9 @@
         <script src="{{asset('template/dashboard/vertical/assets/js/waves.js')}}"></script>
         <script src="{{asset('template/dashboard/vertical/assets/js/simplebar.min.js')}}"></script>
 
+        <!-- Sweet Alert -->
+	    @include('sweetalert::alert')
+
         <!-- Add Plugins or somting else u need here -->
         @yield('plugins-or-somting-else')
         

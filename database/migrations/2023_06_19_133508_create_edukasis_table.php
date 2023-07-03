@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('poster_edukasi');
             $table->string('video_edukasi');
             $table->text('detail_edukasi');
+            $table->string('slug');
             $table->timestamps();
         });
     }

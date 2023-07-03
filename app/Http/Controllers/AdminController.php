@@ -35,24 +35,42 @@ class AdminController extends Controller
             'data_siswa'
         ]));
     }
-    // Detail
-    public function anemiaDetail(){
-        return view('admin.anemia.detail');
-    }
+   
     // Add 
-    public function anemiaAdd(Request $request){
-        
-        Alert::success('Siap, Berhasil ! ','Data Anemia berhasil ditambahkan !');
-        return redirect()->back();
+    public function anemiaCreate(Request $request){
 
-        Alert::error('Wah Gagal ! ','Data Anemia Gagal ditambahkan !');
-        return redirect()->back();
+        // Checkig Avaialable Data Anemia
+        $anemia = Anemia::where('siswa_id', $request->siswa_id)->first();
+
+        if($anemia == NULL){
+            // If null create data
+            $create = Anemia::create($request->all());
+
+            if($create){
+            // If Success
+                Alert::success('Siap, Berhasil ! ','Data Anemia berhasil ditambahkan !');
+                return redirect()->back();
+            }
+        }else{ 
+            // If exist 
+            Alert::error('Wah Gagal ! ','Data Anemia Gagal ditambahkan !');
+            return redirect()->back();
+        }
         
+    }
+    // Get Detail Data
+    public function anemiaDetail(Request $request){
+
+        if ($request->ajax()) {
+            $data_anemia = Anemia::findOrFail($request->id_anemia);
+            $data_siswa = Siswa::findOrFail($data_anemia->siswa_id);
+            return response()->json(['anemia' => $data_anemia,'siswa' => $data_siswa]);
+        }
     }
     // Delete
     public function anemiaDelete($id_anemia){
 
-        $data_anemia = Edukasi::find($id_anemia);
+        $data_anemia = Anemia::find($id_anemia);
 
         try {
             $data_anemia->delete($data_anemia);
@@ -63,6 +81,17 @@ class AdminController extends Controller
             return redirect()->back();
         }
 
+    }
+    // Update 
+    public function anemiaUpdate(Request $request){
+        
+        $id = $request->id_anemia_update;
+        $anemia = Anemia::findOrFail($id);
+
+        $anemia->update($request->all());
+
+        Alert::success('Siap, Berhasil ! ','Data Anemia berhasil diupdate !');
+        return redirect()->back();
     }
     // Export PDF
     public function anemiaExportPDF(){
@@ -82,9 +111,9 @@ class AdminController extends Controller
             'data_edukasi','jml_edukasi'
         ]));
     }
-     // Detail
-     public function edukasiDetail(){
-        return view('admin.edukasi.detail');
+    // Detail Views
+    public function edukasiDetailPage(){
+
     }
     // Add
     public function edukasiAdd(Request $request){
@@ -117,7 +146,7 @@ class AdminController extends Controller
         return view('admin.user.index');
     }
     // Detail
-    public function userDetail(){
+    public function userDetailPage(){
         return view('admin.user.detail');
     }
     // Update
@@ -135,7 +164,7 @@ class AdminController extends Controller
         return view('admin.siswa.index');
     }
     // Detail
-    public function siswaDetail(){
+    public function siswaDetailPage(){
         return view('admin.siswa.detail');
     }
     // Update

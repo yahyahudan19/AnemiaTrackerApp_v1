@@ -124,7 +124,7 @@ Anemia Management | Anemia Tracker App v1.0
         </div>
         <!-- end row-->
 
-        <!-- Modal -->
+        <!-- Modal Add Anemia -->
         <div class="modal fade" id="modalTambahAnemia" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
@@ -135,11 +135,12 @@ Anemia Management | Anemia Tracker App v1.0
                             </button>
                         </div>
                         <div class="modal-body">
-                          <form action="" method="POST" class="needs-validation" novalidate>
+                          <form action="/admin/anemia/create" method="POST" class="needs-validation" novalidate>
+                            @csrf
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
-                                  <label for="validationCustom01">Pilih Siswa</label>
-                                  <select class="form-control" data-toggle="select2">
+                                  <label for="validationTooltip03">Pilih Siswa</label>
+                                  <select class="form-control" data-toggle="select2" id="siswa_id" name="siswa_id">
                                       <option>Select</option>
                                       @foreach ($data_siswa as $siswa)
                                         <option value="{{$siswa->id_siswa}}">{{$siswa->nama_siswa}}</option>
@@ -193,7 +194,88 @@ Anemia Management | Anemia Tracker App v1.0
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Close</button>
-                                <button class="btn btn-primary waves-effect waves-light" type="submit">Submit Form</button>
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Submit</button>
+                            </div>
+                          </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Detail Anemia -->
+        <div class="modal fade" id="modalDetailAnemia" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Detail Data Anemia</h5>
+                            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                          <form action="/admin/anemia/update" method="POST" class="needs-validation" novalidate>
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" class="form-control form-control" id="id_anemia" name="id_anemia_update" value="" required>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationCustom02">Nama Siswa</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" placeholder="Nama Siswa"  aria-describedby="inputGroupPrepend" disabled>
+                                        <div class="invalid-feedback">
+                                          Silahkan di isi terlebih dahulu !
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationCustom02">Tinggi Badan</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text" id="inputGroupPrepend">cm</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="tinggi_anemia" name="tinggi_anemia" placeholder="Tinggi Badan"  aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                          Silahkan di isi terlebih dahulu !
+                                        </div>
+                                      </div>
+                                  </div>
+  
+                                  <div class="col-md-6 mb-3">
+                                    <label for="validationCustomUsername">Berat Badan</label>
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend">Kg</span>
+                                      </div>
+                                      <input type="text" class="form-control" id="berat_anemia" name="berat_anemia" placeholder="Berat Badan"  aria-describedby="inputGroupPrepend" required>
+                                      <div class="invalid-feedback">
+                                         Silahkan di isi terlebih dahulu !
+                                      </div>
+                                    </div>
+                                  </div>
+                                <div class="col-md-6 mb-3">
+                                  <label for="validationTooltip03">Riwayat Anemia</label>
+                                    <select class="form-control" id="riwayat_anemia" name="riwayat_anemia">
+                                        <option value="Pernah">Pernah</option>
+                                        <option value="Tidak Pernah">Tidak Pernah</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                  <label for="validationTooltip04">Pernah Minum Obat Anemia</label>
+                                    <select class="form-control" id="minum_anemia" name="minum_anemia">
+                                        <option value="Pernah">Pernah</option>
+                                        <option value="Tidak Pernah">Tidak Pernah</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Close</button>
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Update</button>
                             </div>
                           </form>
                         </div>
@@ -239,8 +321,8 @@ Anemia Management | Anemia Tracker App v1.0
                                     <td>{{$data->riwayat_anemia}}</td>
                                     <td>{{$data->minum_anemia}}</td>
                                     <td>
-                                        <button class="btn btn-success btn-rounded btn-sm">Detail <i class="mdi mdi-eye-circle"></i></button>
-                                        <button class="btn btn-danger btn-rounded btn-sm">Hapus <i class="mdi mdi-trash-can"></i></button>
+                                        <button id="editAnemia" data-id="{{$data->id_anemia}}" data-toggle="modal" data-target="#modalDetailAnemia" class="btn btn-success btn-rounded btn-sm">Detail <i class="mdi mdi-eye-circle"></i></button>
+                                        <a href="/admin/anemia/delete/{{$data->id_anemia}}" class="btn btn-danger btn-rounded btn-sm">Hapus <i class="mdi mdi-trash-can"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -289,5 +371,31 @@ Anemia Management | Anemia Tracker App v1.0
 
     <!-- Custom Js -->
     <script src="{{asset('template/dashboard/vertical/assets/pages/advanced-plugins-demo.js')}}"></script>
+
+    <!-- JS for Detail Anemia -->
+    <script>
+        $('body').on('click', '#editAnemia', function (event) {
+                event.preventDefault();
+                var token = $("input[name='_token']").val();
+                var id = $(this).data('id');
+                // console.log(id)
+                // console.log(token)
+                $.ajax({
+                    url: "<?php echo route('getAnemiaID') ?>",
+                    method: 'POST',
+                    data: {id_anemia:id, _token:token},
+                    success: function(data) {
+                        $("input[name='nama_siswa']").val(data.siswa.nama_siswa);
+                        $("input[name='id_anemia_update']").val(data.anemia.id_anemia);
+                        $("input[name='tinggi_anemia']").val(data.anemia.tinggi_anemia);
+                        $("input[name='berat_anemia']").val(data.anemia.berat_anemia);
+                        $("select[name='riwayat_anemia']").val(data.anemia.riwayat_anemia).change();
+                        $("select[name='minum_anemia']").val(data.anemia.minum_anemia).change();
+                        
+                    }
+                });
+        });
+
+    </script>
 
 @endsection

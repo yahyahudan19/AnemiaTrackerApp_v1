@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Hash;
 
@@ -24,32 +25,51 @@ Route::get('/', function () {
 //Admin Routes
 Route::middleware(['auth','role:Administrator'])->group(function() {
     // =========== Dashboard =========== //
-    Route::get('/admin','\App\Http\Controllers\AdminController@index')->name('index'); //Dashboard Admin Views
+    Route::get('/admin',[AdminController::class,'index'])->name('index'); //Dashboard Admin Views
 
     // =========== Anemia Management =========== //
-    Route::get('/admin/anemia','\App\Http\Controllers\AdminController@anemiaPage'); //Anemia Management Views
+    Route::get('/admin/anemia',[AdminController::class,'anemiaPage']); //Anemia Management Views
+    Route::post('/admin/anemia/create',[AdminController::class,'anemiaCreate']); // Anemia Add Data
+    Route::put('/admin/anemia/update',[AdminController::class,'anemiaUpdate']); // Anemia Update Data
+    Route::get('/admin/anemia/delete/{id}',[AdminController::class,'anemiaDelete']); // Anemia Delete Data
+    Route::post('/admin/anemia/detail',[AdminController::class,'anemiaDetail'])->name('getAnemiaID'); // Anemia Get Detail Data  
     Route::get('/admin/anemia/export',[AdminController::class,'anemiaExportPDF']); // Anemia Export PDF
+    
 
     // =========== Edukasi Management =========== //
-    Route::get('/admin/edukasi','\App\Http\Controllers\AdminController@edukasiPage'); //Edukasi Management Views
+    Route::get('/admin/edukasi',[AdminController::class,'edukasiPage']); // Edukasi Management Views
+    Route::post('/admin/edukasi/create',[AdminController::class,'edukasiCreate']); // Edukasi Add Data
+    Route::put('/admin/edukasi/update/{slug}',[AdminController::class,'edukasiUpdate']); // Edukasi Update Data
+    Route::get('/admin/edukasi/delete/{slug}',[AdminController::class,'edukasiDelete']); // Edukasi Delete Data
+    Route::get('/admin/edukasi/detail/{slug}',[AdminController::class,'edukasiDetailPage']); // Edukasi Detail Views
+    Route::get('/admin/edukasi/export',[AdminController::class,'edukasiExportPDF']); // Edukasi Export PDF
     
     // =========== Siswa Management =========== //
-    Route::get('/admin/siswa','\App\Http\Controllers\AdminController@siswaPage'); //Siswa Management Views
+    Route::get('/admin/siswa',[AdminController::class,'siswaPage']); //Siswa Management Views
+    Route::post('/admin/siswa/create',[AdminController::class,'siswaCreate']); // Siswa Add Data
+    Route::put('/admin/siswa/update/{id}',[AdminController::class,'siswaUpdate']); // Siswa Update Data
+    Route::get('/admin/siswa/delete/{id}',[AdminController::class,'siswaDelete']); // Siswa Delete Data
+    Route::get('/admin/siswa/detail/{id}',[AdminController::class,'siswaDetailPage']); // Siswa Detail Views
+    Route::get('/admin/siswa/export',[AdminController::class,'siswaExportPDF']); // Siswa Export PDF
 
     // =========== User Management =========== //
-    Route::get('/admin/user','\App\Http\Controllers\AdminController@userPage'); //User Management Views
+    Route::get('/admin/user',[AdminController::class,'userPage']); //User Management Views
+    Route::put('/admin/user/update/{id}',[AdminController::class,'userUpdate']); // Siswa Update Data
+    Route::get('/admin/user/delete/{id}',[AdminController::class,'userDelete']); // Siswa Delete Data
+    Route::post('/admin/user/detail',[AdminController::class,'userDetailPage']); // Siswa Detail Views
 
 });
 
 //Siswa Routes
 Route::middleware(['auth','role:Siswa'])->group(function() {
-    Route::get('/siswa','\App\Http\Controllers\SiswaController@index')->name('index'); //Dashboard Siswa Views
+    Route::get('/siswa',[SiswaController::class,'index'])->name('index'); //Dashboard Siswa Views
+    Route::get('/siswa/profile',[SiswaController::class,'profileSiswa'])->name('profile'); //Dashboard Siswa Views
 
-    Route::get('/siswa/anemia','\App\Http\Controllers\SiswaController@anemiaPage'); //Anemia Views
+    Route::get('/siswa/anemia',[SiswaController::class,'anemiaPage']); //Anemia Views
 
-    Route::get('/siswa/edukasi','\App\Http\Controllers\SiswaController@edukasiPage'); //Edukasi Views
+    Route::get('/siswa/edukasi',[SiswaController::class,'edukasiPage']); //Edukasi Views
 
-    Route::get('/siswa/profile','\App\Http\Controllers\SiswaController@profilePage'); //Profile Views
+    Route::get('/siswa/profile',[SiswaController::class,'profilePage']); //Profile Views
 });
 
 //Authentication Page and Processes Routes
