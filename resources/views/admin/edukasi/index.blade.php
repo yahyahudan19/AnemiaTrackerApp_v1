@@ -100,7 +100,7 @@ Edukasi Management | Anemia Tracker App v1.0
         </div>
         <!-- end row-->
 
-        <!-- Modal -->
+        <!-- Modal Create Edukasi -->
         <div class="modal fade" id="modalTambahEdukasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
@@ -111,11 +111,13 @@ Edukasi Management | Anemia Tracker App v1.0
                             </button>
                         </div>
                         <div class="modal-body">
+                          <form action="/admin/edukasi/create" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
                                     <label for="validationCustom02">Judul Edukasi</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="tinggi_anemia" name="tinggi_anemia" placeholder="Judul Edukasi" aria-describedby="inputGroupPrepend" required>
+                                        <input type="text" class="form-control" id="judul_edukasi" name="judul_edukasi" placeholder="Judul Edukasi" aria-describedby="inputGroupPrepend" required>
                                         <div class="invalid-feedback">
                                           Silahkan di isi terlebih dahulu !
                                         </div>
@@ -124,13 +126,13 @@ Edukasi Management | Anemia Tracker App v1.0
                                   <div class="col-md-12 mb-3">
                                     <label for="validationCustomUsername">Detail Edukasi</label>
                                     <div class="input-group">
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <textarea class="form-control" id="detail_edukasi" name="detail_edukasi" rows="3" placeholder="Detail Edukasi"></textarea>
                                     </div>
                                   </div>
                                   <div class="col-md-12 mb-3">
                                     <label for="validationCustomUsername">Link Video </label>
                                     <div class="input-group">
-                                      <input type="text" class="form-control" id="berat_anemia" name="berat_anemia" placeholder="https://www.youtube.com/watch?v=linkvideosepertiini" aria-describedby="inputGroupPrepend" required>
+                                      <input type="text" class="form-control" id="video_edukasi" name="video_edukasi" placeholder="https://www.youtube.com/watch?v=linkvideosepertiini" aria-describedby="inputGroupPrepend" required>
                                       <div class="invalid-feedback">
                                          Silahkan di isi terlebih dahulu !
                                       </div>
@@ -139,7 +141,68 @@ Edukasi Management | Anemia Tracker App v1.0
                                   <div class="col-md-12 mb-3">
                                     <label for="validationCustomUsername">Upload Poster </label>
                                     <div class="input-group">
-                                        <input type="file" class="dropify" data-height="200"/>
+                                        <input type="file" class="dropify" data-height="200" id="poster_edukasi" name="poster_edukasi" required/>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="form-group">
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Close</button>
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Submit Form</button>
+                            </div>
+                          </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Edit Edukasi -->
+        <div class="modal fade" id="modalEditEdukasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Tambah Data Edukasi Kesehatan</h5>
+                            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                          <form action="/admin/edukasi/update" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" class="form-control form-control" id="id_edukasi" name="id_edukasi_update" value="" required>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationCustom02">Judul Edukasi</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="judul_edukasi" name="judul_edukasi" placeholder="Judul Edukasi" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                          Silahkan di isi terlebih dahulu !
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-12 mb-3">
+                                    <label for="validationCustomUsername">Detail Edukasi</label>
+                                    <div class="input-group">
+                                        <textarea class="form-control" id="detail_edukasi" name="detail_edukasi" rows="3"></textarea>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12 mb-3">
+                                    <label for="validationCustomUsername">Link Video </label>
+                                    <div class="input-group">
+                                      <input type="text" class="form-control" id="video_edukasi" name="video_edukasi" placeholder="https://www.youtube.com/watch?v=linkvideosepertiini" aria-describedby="inputGroupPrepend" required>
+                                      <div class="invalid-feedback">
+                                         Silahkan di isi terlebih dahulu !
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12 mb-3">
+                                    <label for="validationCustomUsername">Upload Poster </label>
+                                    <div class="input-group">
+                                        <input type="file" class="dropify" data-height="200" id="poster_edukasi" name="poster_edukasi"/>
                                     </div>
                                   </div>
                             </div>
@@ -176,7 +239,6 @@ Edukasi Management | Anemia Tracker App v1.0
                                     <th>Judul</th>
                                     <th>Poster</th>
                                     <th>Video</th>
-                                    <th>Detail</th>
                                     <th>Tanggal</th>
                                     <th>Action</th>
                                 </tr>
@@ -189,15 +251,18 @@ Edukasi Management | Anemia Tracker App v1.0
                                 <tr>
                                     <td>{{$no++}}</td>
                                     <td>{{$data->judul_edukasi}}</td>
-                                    <td>{{$data->poster_edukasi}}</td>
+                                    <td>
+                                        <img src="/poster/{{$data->poster_edukasi}}" alt="image"
+                                        class="img-fluid img-thumbnail" width="100"/>
+                                    </td>
                                     <td>
                                         <a href="{{$data->video_edukasi}}" target="_blank" class="btn btn-success btn-rounded btn-sm"><i class="mdi mdi-youtube"></i>Lihat Video</a> 
                                     </td>
-                                    <td>{{$data->detail_edukasi}}</td>
-                                    <td>{{$data->created_at}}</td>
+                                    <td>{{ \Carbon\Carbon::parse($data->created_at)->locale('id_ID')->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>
-                                        <button class="btn btn-success btn-rounded btn-sm">Detail <i class="mdi mdi-eye-circle"></i></button>
-                                        <button class="btn btn-danger btn-rounded btn-sm">Hapus <i class="mdi mdi-trash-can"></i></button>
+                                        <a href="/admin/edukasi/{{$data->slug}}" class="btn btn-success btn-rounded btn-sm">Detail <i class="mdi mdi-eye-circle"></i></a>
+                                        <button id="editEdukasi" data-id="{{$data->id_edukasi}}" data-toggle="modal" data-target="#modalEditEdukasi" class="btn btn-warning btn-rounded btn-sm">Edit <i class="mdi mdi-circle-edit-outline"></i></button>
+                                        <a href="/admin/edukasi/delete/{{$data->slug}}" class="btn btn-danger btn-rounded btn-sm">Hapus <i class="mdi mdi-trash-can"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -246,5 +311,29 @@ Edukasi Management | Anemia Tracker App v1.0
     
     <!-- Custom Js -->
     <script src="{{asset('template/dashboard/vertical/assets/pages/advanced-plugins-demo.js')}}"></script>
+
+    <!-- JS for Detail Anemia -->
+    <script>
+        $('body').on('click', '#editEdukasi', function (event) {
+                event.preventDefault();
+                var token = $("input[name='_token']").val();
+                var id = $(this).data('id');
+                // console.log(id)
+                // console.log(token)
+                $.ajax({
+                    url: "<?php echo route('getEdukasiID') ?>",
+                    method: 'POST',
+                    data: {id_edukasi:id, _token:token},
+                    success: function(data) {
+                        $("input[name='id_edukasi_update']").val(data.edukasi.id_edukasi);
+                        $("input[name='judul_edukasi']").val(data.edukasi.judul_edukasi);
+                        $("input[name='video_edukasi']").val(data.edukasi.video_edukasi);
+                        // $("input[name='poster_edukasi']").val(data.edukasi.poster_edukasi);
+                        $("textarea[name='detail_edukasi']").val(data.edukasi.detail_edukasi);
+                    }
+                });
+        });
+
+    </script>
 
 @endsection

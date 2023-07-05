@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Ramsey\Uuid\Uuid;
 
 class User extends Authenticatable
 {
@@ -14,6 +15,17 @@ class User extends Authenticatable
 
     protected $keyType = 'string';
     public $incrementing = false;
+    protected $primaryKey = 'id';
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            // Buat UUID baru saat membuat model baru
+            $model->id = Uuid::uuid4()->toString();
+        });
+    }
 
     /**
      * The attributes that are mass assignable.

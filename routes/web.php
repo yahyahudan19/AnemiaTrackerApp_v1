@@ -39,10 +39,12 @@ Route::middleware(['auth','role:Administrator'])->group(function() {
     // =========== Edukasi Management =========== //
     Route::get('/admin/edukasi',[AdminController::class,'edukasiPage']); // Edukasi Management Views
     Route::post('/admin/edukasi/create',[AdminController::class,'edukasiCreate']); // Edukasi Add Data
-    Route::put('/admin/edukasi/update/{slug}',[AdminController::class,'edukasiUpdate']); // Edukasi Update Data
+    Route::put('/admin/edukasi/update',[AdminController::class,'edukasiUpdate']); // Edukasi Update Data
     Route::get('/admin/edukasi/delete/{slug}',[AdminController::class,'edukasiDelete']); // Edukasi Delete Data
-    Route::get('/admin/edukasi/detail/{slug}',[AdminController::class,'edukasiDetailPage']); // Edukasi Detail Views
+    Route::get('/admin/edukasi/{slug}',[AdminController::class,'edukasiDetailPage']); // Edukasi Detail Views
     Route::get('/admin/edukasi/export',[AdminController::class,'edukasiExportPDF']); // Edukasi Export PDF
+    Route::post('/admin/edukasi/detail',[AdminController::class,'edukasiDetail'])->name('getEdukasiID'); // Anemia Get Detail Data  
+    
     
     // =========== Siswa Management =========== //
     Route::get('/admin/siswa',[AdminController::class,'siswaPage']); //Siswa Management Views
@@ -51,6 +53,8 @@ Route::middleware(['auth','role:Administrator'])->group(function() {
     Route::get('/admin/siswa/delete/{id}',[AdminController::class,'siswaDelete']); // Siswa Delete Data
     Route::get('/admin/siswa/detail/{id}',[AdminController::class,'siswaDetailPage']); // Siswa Detail Views
     Route::get('/admin/siswa/export',[AdminController::class,'siswaExportPDF']); // Siswa Export PDF
+    Route::post('/admin/siswa/detail',[AdminController::class,'siswaDetail'])->name('getSiswaID'); // Anemia Get Detail Data  
+
 
     // =========== User Management =========== //
     Route::get('/admin/user',[AdminController::class,'userPage']); //User Management Views
