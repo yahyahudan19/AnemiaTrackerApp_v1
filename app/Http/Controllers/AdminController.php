@@ -304,14 +304,22 @@ class AdminController extends Controller
     // ================ User Management ================ // 
     // Views
     public function userPage(){
-
         
+        $user_exception = ['admin@anemiatracker.app'];
 
-        return view('admin.user.index');
+        $data_user = User::whereNotIn('email',$user_exception)->orderBy('created_at')->get()->all();
+        $total_user = User::all()->count();
+        $jumlah_user = $total_user-1;
+
+        return view('admin.user.index',compact('data_user','jumlah_user'));
     }
     // Detail
-    public function userDetailPage(){
-        return view('admin.user.detail');
+    public function userDetail(Request $request){
+
+        if ($request->ajax()) {
+            $data_user = User::findOrFail($request->id);
+            return response()->json(['user' => $data_user]);
+        }
     }
     // Update
     public function userUpdate(){
@@ -322,11 +330,12 @@ class AdminController extends Controller
 
     }
 
+
     // ================ Siswa Management ================ // 
     // Views
     public function siswaPage(){
 
-        $data_siswa = Siswa::all();
+        $data_siswa = Siswa::all()->sortBy('ASC');
         $jumlah_siswa = Siswa::all()->count();
         
         return view('admin.siswa.index',compact('data_siswa','jumlah_siswa'));
@@ -400,8 +409,25 @@ class AdminController extends Controller
         return view('admin.siswa.detail');
     }
     // Update
-    public function siswaUpdate(){
+    public function siswaUpdate(Request $request){
+        // dd($request->all());
         
+        $id = $request->id_siswa_update;
+        $siswa = Siswa::findOrFail($id);
+        $user = User::findOrFail($siswa->user_id);
+        
+        try {
+            $siswa->update($request->all());
+            $user->update([
+                "name" => $request->nama_siswa
+            ]);
+        } catch (QueryException $e) {
+            Alert::warning('Wah Gagal ! ','Data Siswa gagal diupdate !');
+            return redirect()->back();
+        }
+        Alert::success('Siap, Berhasil ! ','Data Siswa berhasil diupdate !');
+        return redirect()->back();
+
     }
     // Delete
     public function siswaDelete($id_siswa){
@@ -426,14 +452,12 @@ class AdminController extends Controller
     // Get Detail Data
     public function siswaDetail(Request $request){
 
-        $data_siswa = Siswa::findOrFail($request->id_siswa);
-        $data_user = User::where('id',$data_siswa->user_id);
-        return response()->json($data_user);
-
-
         if ($request->ajax()) {
             $data_siswa = Siswa::findOrFail($request->id_siswa);
-            $data_user = User::where('id',$data_siswa->user_id);
+            $data_user = User::findOrFail($data_siswa->user_id);
+            
+            // return response()->json($data_user);
+
             return response()->json(['siswa' => $data_siswa,'user' => $data_user]);
         }
     }

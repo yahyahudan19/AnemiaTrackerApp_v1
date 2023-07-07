@@ -49,7 +49,7 @@ Route::middleware(['auth','role:Administrator'])->group(function() {
     // =========== Siswa Management =========== //
     Route::get('/admin/siswa',[AdminController::class,'siswaPage']); //Siswa Management Views
     Route::post('/admin/siswa/create',[AdminController::class,'siswaCreate']); // Siswa Add Data
-    Route::put('/admin/siswa/update/{id}',[AdminController::class,'siswaUpdate']); // Siswa Update Data
+    Route::put('/admin/siswa/update',[AdminController::class,'siswaUpdate']); // Siswa Update Data
     Route::get('/admin/siswa/delete/{id}',[AdminController::class,'siswaDelete']); // Siswa Delete Data
     Route::get('/admin/siswa/detail/{id}',[AdminController::class,'siswaDetailPage']); // Siswa Detail Views
     Route::get('/admin/siswa/export',[AdminController::class,'siswaExportPDF']); // Siswa Export PDF
@@ -60,7 +60,7 @@ Route::middleware(['auth','role:Administrator'])->group(function() {
     Route::get('/admin/user',[AdminController::class,'userPage']); //User Management Views
     Route::put('/admin/user/update/{id}',[AdminController::class,'userUpdate']); // Siswa Update Data
     Route::get('/admin/user/delete/{id}',[AdminController::class,'userDelete']); // Siswa Delete Data
-    Route::post('/admin/user/detail',[AdminController::class,'userDetailPage']); // Siswa Detail Views
+    Route::post('/admin/user/detail',[AdminController::class,'userDetail'])->name('getUserID'); // Siswa Detail Views
 
 });
 

@@ -141,7 +141,7 @@ Siswa Management | Anemia Tracker App v1.0
                             </button>
                         </div>
                         <div class="modal-body">
-                          <form action="/admin/siswa/create" method="POST" enctype="multipart/form-data">
+                          <form action="/admin/siswa/create" method="POST" >
                             {{ csrf_field() }}
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
@@ -249,14 +249,15 @@ Siswa Management | Anemia Tracker App v1.0
                             </button>
                         </div>
                         <div class="modal-body">
-                          <form action="/admin/siswa/update" method="POST" enctype="multipart/form-data">
+                          <form action="/admin/siswa/update" method="POST">
                             @csrf
                             @method('PUT')                            
                             <div class="form-row">
+                                <input type="hidden" class="form-control form-control" id="id_siswa" name="id_siswa_update" value="" required>
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustom02">Username</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="username" name="username" placeholder="username" aria-describedby="inputGroupPrepend" required disabled>
+                                        <input type="text" class="form-control" id="username" name="username_update" placeholder="username" aria-describedby="inputGroupPrepend" required disabled>
                                         <div class="invalid-feedback">
                                           Silahkan di isi terlebih dahulu !
                                         </div>
@@ -274,7 +275,7 @@ Siswa Management | Anemia Tracker App v1.0
                                 <div class="col-md-12 mb-3">
                                     <label for="validationCustom02">NIS Siswa</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="nis_siswa" name="nis_siswa" placeholder="Contoh : 14045" aria-describedby="inputGroupPrepend" required>
+                                        <input type="text" class="form-control" id="nis_siswa" name="nis_siswa_update" placeholder="Contoh : 14045" aria-describedby="inputGroupPrepend" required>
                                         <div class="invalid-feedback">
                                           Silahkan di isi terlebih dahulu !
                                         </div>
@@ -283,7 +284,7 @@ Siswa Management | Anemia Tracker App v1.0
                                 <div class="col-md-12 mb-3">
                                     <label for="validationCustom02">Nama Lengkap</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" placeholder="Nama Siswa" aria-describedby="inputGroupPrepend" required>
+                                        <input type="text" class="form-control" id="nama_siswa" name="nama_siswa_update" placeholder="Nama Siswa" aria-describedby="inputGroupPrepend" required>
                                         <div class="invalid-feedback">
                                           Silahkan di isi terlebih dahulu !
                                         </div>
@@ -298,7 +299,7 @@ Siswa Management | Anemia Tracker App v1.0
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustomUsername">Jenis Kelamin </label>
                                     <div class="input-group">
-                                        <select class="form-control" data-toggle="select2" id="jenisk_siswa" name="jenisk_siswa" required>
+                                        <select class="form-control" data-toggle="select2" id="jenisk_siswa_update" name="jenisk_siswa" required>
                                             <option>Laki-Laki</option>
                                             <option>Perempuan</option>
                                       </select>
@@ -307,7 +308,7 @@ Siswa Management | Anemia Tracker App v1.0
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustomUsername">Tempat Tanggal Lahir</label>
                                     <div class="input-group">
-                                      <input type="text" class="form-control" id="ttl_siswa" name="ttl_siswa" placeholder="Malang, 31 Maret 2000" aria-describedby="inputGroupPrepend" required>
+                                      <input type="text" class="form-control" id="ttl_siswa" name="ttl_siswa_update" placeholder="Malang, 31 Maret 2000" aria-describedby="inputGroupPrepend" required>
                                       <div class="invalid-feedback">
                                          Silahkan di isi terlebih dahulu !
                                       </div>
@@ -316,7 +317,7 @@ Siswa Management | Anemia Tracker App v1.0
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustomUsername">Nama Ayah </label>
                                     <div class="input-group">
-                                      <input type="text" class="form-control" id="ayah_siswa" name="ayah_siswa" placeholder="Nama Ayah Siswa" aria-describedby="inputGroupPrepend" required>
+                                      <input type="text" class="form-control" id="ayah_siswa" name="ayah_siswa_update" placeholder="Nama Ayah Siswa" aria-describedby="inputGroupPrepend" required>
                                       <div class="invalid-feedback">
                                          Silahkan di isi terlebih dahulu !
                                       </div>
@@ -325,7 +326,7 @@ Siswa Management | Anemia Tracker App v1.0
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustomUsername">Nama Ibu </label>
                                     <div class="input-group">
-                                      <input type="text" class="form-control" id="ibu_siswa" name="ibu_siswa" placeholder="Nama Ibu Siswa" aria-describedby="inputGroupPrepend" required>
+                                      <input type="text" class="form-control" id="ibu_siswa" name="ibu_siswa_update" placeholder="Nama Ibu Siswa" aria-describedby="inputGroupPrepend" required>
                                       <div class="invalid-feedback">
                                          Silahkan di isi terlebih dahulu !
                                       </div>
@@ -353,7 +354,7 @@ Siswa Management | Anemia Tracker App v1.0
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Buttons example</h4>
+                        <h4 class="card-title">Data Siswa</h4>
                         <p class="card-subtitle mb-4">
                             The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page
                             that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.
@@ -366,7 +367,7 @@ Siswa Management | Anemia Tracker App v1.0
                                     <th>NIS</th>
                                     <th>Nama</th>
                                     <th>TTL</th>
-                                    <th>Alamat</th>
+                                    {{-- <th>Alamat</th> --}}
                                     <th>Jenis Kelamin</th>
                                     <th>Nama Ayah</th>
                                     <th>Nama Ibu</th>
@@ -383,12 +384,12 @@ Siswa Management | Anemia Tracker App v1.0
                                     <td>{{$data->nis_siswa}}</td>
                                     <td>{{$data->nama_siswa}}</td>
                                     <td>{{$data->ttl_siswa}}</td>
-                                    <td>{{$data->alamat_siswa}}</td>
+                                    {{-- <td>{{$data->alamat_siswa}}</td> --}}
                                     <td>{{$data->jenisk_siswa}}</td>
                                     <td>{{$data->ayah_siswa}}</td>
                                     <td>{{$data->ibu_siswa}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-success btn-rounded btn-sm">Detail <i class="mdi mdi-eye-circle"></i></a>
+                                        {{-- <a href="#" class="btn btn-success btn-rounded btn-sm">Detail <i class="mdi mdi-eye-circle"></i></a> --}}
                                         <button id="editSiswa" data-id="{{$data->id_siswa}}" data-toggle="modal" data-target="#modalEditSiswa" class="btn btn-warning btn-rounded btn-sm">Edit <i class="mdi mdi-circle-edit-outline"></i></button>
                                         <a href="/admin/siswa/delete/{{$data->id_siswa}}" class="btn btn-danger btn-rounded btn-sm">Hapus <i class="mdi mdi-trash-can"></i></a>
                                     </td>
@@ -438,15 +439,16 @@ Siswa Management | Anemia Tracker App v1.0
                     method: 'POST',
                     data: {id_siswa:id, _token:token},
                     success: function(data) {
-                        $("input[name='username']").val(data.user.username);
+                        // console.log(data)
+                        $("input[name='username_update']").val(data.user.username);
                         $("input[name='id_siswa_update']").val(data.siswa.id_siswa);
-                        $("input[name='nama_siswa']").val(data.siswa.nama_siswa);
-                        $("input[name='nis_siswa']").val(data.siswa.nis_siswa);
-                        $("input[name='ttl_siswa']").val(data.siswa.ttl_siswa);
-                        $("textarea[name='alamat_siswa']").val(data.siswa.alamat_siswa);
-                        $("input[name='ayah_siswa']").val(data.siswa.ayah_siswa);
-                        $("input[name='ibu_siswa']").val(data.siswa.ibu_siswa);
-                        $("select[name='jenisk']").val(data.siswa.jenisk).change();
+                        $("input[name='nama_siswa_update']").val(data.siswa.nama_siswa);
+                        $("input[name='nis_siswa_update']").val(data.siswa.nis_siswa);
+                        $("input[name='ttl_siswa_update']").val(data.siswa.ttl_siswa);
+                        $("textarea[name='alamat_siswa_update']").val(data.siswa.alamat_siswa);
+                        $("input[name='ayah_siswa_update']").val(data.siswa.ayah_siswa);
+                        $("input[name='ibu_siswa_update']").val(data.siswa.ibu_siswa);
+                        $("select[name='jenisk_update']").val(data.siswa.jenisk).change();
                         
                     }
                 });
