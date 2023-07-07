@@ -15,7 +15,7 @@ class Siswa extends Model
 
     protected $table = 'siswas';
     protected $primaryKey = 'id_siswa';
-    protected $fillable = ['user_id','nama_siswa','nis_siswa','ttl_siswa','alamat_siswa','jenisk_siswa','ayah_siswa','ibu_siswa'];
+    protected $fillable = ['user_id','nama_siswa','nis_siswa','ttl_siswa','umur_siswa','alamat_siswa','jenisk_siswa','ayah_siswa','ibu_siswa'];
 
     protected static function boot()
     {

@@ -25,27 +25,27 @@ Dashboard | Anemia Tracker App v1.0
         <!-- end page title -->
 
         <div class="row">
-            <div class="col-md-6 col-xl-3">
+            <div class="col-md-6 col-xl-4">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4">
-                            <span class="badge badge-soft-primary float-right">Daily</span>
-                            <h5 class="card-title mb-0">Cost per Unit</h5>
+                            <span class="badge badge-soft-primary float-right">Total</span>
+                            <h5 class="card-title mb-0">Data Anemia</h5>
                         </div>
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    $17.21
+                                    {{$anemia}} Anemia
                                 </h2>
                             </div>
-                            <div class="col-4 text-right">
+                            {{-- <div class="col-4 text-right">
                                 <span class="text-muted">12.5% <i
                                         class="mdi mdi-arrow-up text-success"></i></span>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="progress shadow-sm" style="height: 5px;">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 57%;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%;">
                             </div>
                         </div>
                     </div>
@@ -53,27 +53,23 @@ Dashboard | Anemia Tracker App v1.0
                 </div><!-- end card-->
             </div> <!-- end col-->
 
-            <div class="col-md-6 col-xl-3">
+            <div class="col-md-6 col-xl-4">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4">
-                            <span class="badge badge-soft-primary float-right">Per Week</span>
-                            <h5 class="card-title mb-0">Market Revenue</h5>
+                            <span class="badge badge-soft-primary float-right">Total</span>
+                            <h5 class="card-title mb-0">Data Edukasi</h5>
                         </div>
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    $1875.54
+                                    {{$edukasi}} Edukasi
                                 </h2>
-                            </div>
-                            <div class="col-4 text-right">
-                                <span class="text-muted">18.71% <i
-                                        class="mdi mdi-arrow-down text-danger"></i></span>
                             </div>
                         </div>
 
                         <div class="progress shadow-sm" style="height: 5px;">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;">
                             </div>
                         </div>
                     </div>
@@ -81,27 +77,23 @@ Dashboard | Anemia Tracker App v1.0
                 </div><!-- end card-->
             </div> <!-- end col-->
 
-            <div class="col-md-6 col-xl-3">
+            <div class="col-md-6 col-xl-4">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4">
-                            <span class="badge badge-soft-primary float-right">Per Month</span>
-                            <h5 class="card-title mb-0">Expenses</h5>
+                            <span class="badge badge-soft-primary float-right">Total</span>
+                            <h5 class="card-title mb-0">Data Siswa</h5>
                         </div>
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    $784.62
+                                    {{$siswa}} Siswa
                                 </h2>
-                            </div>
-                            <div class="col-4 text-right">
-                                <span class="text-muted">57% <i
-                                        class="mdi mdi-arrow-up text-success"></i></span>
                             </div>
                         </div>
 
                         <div class="progress shadow-sm" style="height: 5px;">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;">
                             </div>
                         </div>
                     </div>
@@ -110,65 +102,38 @@ Dashboard | Anemia Tracker App v1.0
                 <!--end card-->
             </div> <!-- end col-->
 
-            <div class="col-md-6 col-xl-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <span class="badge badge-soft-primary float-right">All Time</span>
-                            <h5 class="card-title mb-0">Daily Visits</h5>
-                        </div>
-                        <div class="row d-flex align-items-center mb-4">
-                            <div class="col-8">
-                                <h2 class="d-flex align-items-center mb-0">
-                                    1,15,187
-                                </h2>
-                            </div>
-                            <div class="col-4 text-right">
-                                <span class="text-muted">17.8% <i
-                                        class="mdi mdi-arrow-down text-danger"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="progress shadow-sm" style="height: 5px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
-                        </div>
-                    </div>
-                    <!--end card body-->
-                </div><!-- end card-->
-            </div> <!-- end col-->
+            
         </div>
         <!-- end row-->
 
 
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-6">
 
                 <div class="card">
                     <div class="card-body">
 
                         <div class="row">
-                            <div class="col-lg-8">
-                                <h4 class="card-title">Sales Analytics</h4>
-                                <p class="card-subtitle mb-4">From date of 1st Jan 2020 to continue</p>
-                                <div id="morris-bar-example" class="morris-chart"></div>
+                            <div class="col-lg-12">
+                                <h4 class="card-title">Analisis Riwayat Anemia</h4>
+                                <p class="card-subtitle mb-4">Per Bulan Januari 2023 sampai Sekarang</p>
+                                <div id="morris-bar-anemia" class="morris-chart"></div>
                             </div>
 
-                            <div class="col-lg-4">
+                            {{-- <div class="col-lg-4">
 
-                                <h4 class="card-title">Stock</h4>
-                                <p class="card-subtitle mb-4">Recent Stock</p>
+                                <h4 class="card-title">Data Anemia</h4>
+                                <p class="card-subtitle mb-4">Data Anemia Terbaru</p>
 
                                 <div class="text-center">
                                     <input data-plugin="knob" data-width="165" data-height="165"
-                                        data-linecap=round data-fgColor="#7a08c2" value="95"
+                                        data-linecap=round data-fgColor="#7a08c2" value="1"
                                         data-skin="tron" data-angleOffset="180" data-readOnly=true
                                         data-thickness=".15" />
-                                    <h5 class="text-muted mt-3">Total sales made today</h5>
+                                    <h5 class="text-muted mt-3">Data Anemia hari ini </h5>
 
 
-                                    <p class="text-muted w-75 mx-auto sp-line-2">Traditional heading
-                                        elements are
-                                        designed to work best in the meat of your page content.</p>
+                                    <p class="text-muted w-75 mx-auto sp-line-2">Data Anemia diinput dan ditampilkan berdasarkan Tahun 2023,2024,dan 2025 </p>
 
                                     <div class="row mt-3">
                                         <div class="col-6">
@@ -184,76 +149,36 @@ Dashboard | Anemia Tracker App v1.0
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <!--end card body-->
                 </div> <!-- end card-->
             </div> <!-- end col -->
-
-            <div class="col-lg-3">
-
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h4 class="card-title">Account Transactions</h4>
-                                <p class="card-subtitle mb-4">Transaction period from 21 July to
-                                    25 Aug</p>
-                                <h3>$7841.12 <span class="badge badge-soft-success float-right">+7.5%</span></h3>
-                            </div>
-                        </div> <!-- end row -->
-
-                        <div id="sparkline1" class="mt-3"></div>
-                    </div>
-                    <!--end card body-->
-                </div>
-                <!--end card-->
-
-            </div><!-- end col -->
-
-        </div>
-        <!--end row-->
-
-
-        <div class="row">
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <div class="dropdown float-right position-relative">
-                            <a href="#" class="dropdown-toggle h4 text-muted" data-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="mdi mdi-dots-vertical"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="#" class="dropdown-item">Action</a></li>
-                                <li><a href="#" class="dropdown-item">Another action</a></li>
-                                <li><a href="#" class="dropdown-item">Something else here</a></li>
-                                <li class="dropdown-divider"></li>
-                                <li><a href="#" class="dropdown-item">Separated link</a></li>
-                            </ul>
+
+                        <h4 class="card-title">Edukasi Kesehatan Terakhir : </h4>
+                        {{-- <p class="card-subtitle mb-4 font-size-13">Video Edukasi Kesehatan yang terakhir ditambahkan :
+                        </p> --}}
+                        
+                         <!-- 16:9 aspect ratio -->
+                         <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{$data_edukasi_terbaru->video_edukasi}}"></iframe>
                         </div>
-                        <h4 class="card-title d-inline-block">Total Revenue</h4>
-
-                        <div id="morris-line-example" class="morris-chart" style="height: 290px;"></div>
-
-                        <div class="row text-center mt-4">
-                            <div class="col-6">
-                                <h4>$7841.12</h4>
-                                <p class="text-muted mb-0">Total Revenue</p>
-                            </div>
-                            <div class="col-6">
-                                <h4>17</h4>
-                                <p class="text-muted mb-0">Open Compaign</p>
-                            </div>
-                        </div>
-
                     </div>
                     <!--end card body-->
 
                 </div>
                 <!--end card-->
             </div>
+        </div>
+        <!--end row-->
+
+
+        {{-- <div class="row">
+         
             <!--end col-->
             <div class="col-lg-6">
                 <div class="card">
@@ -379,9 +304,48 @@ Dashboard | Anemia Tracker App v1.0
             </div>
             <!--end col-->
 
-        </div>
+        </div> --}}
         <!--end row-->
 
     </div> <!-- container-fluid -->
 </div>
+@section('plugins-or-somting-else')
+    <!-- Script for Chart-->
+    <script>
+        $(function() {
+        'use strict';
+        if ($("#morris-bar-anemia").length) {
+            Morris.Bar({
+            element: 'morris-bar-anemia',
+            barColors: ['#ebeef1', '#00c2b2'],
+            data: [
+                {
+                y: '2023',
+                a: {{$riwayat_tidak_2023}},
+                b: {{$riwayat_pernah_2023}}
+                },
+                {
+                y: '2024',
+                a: {{$riwayat_tidak_2024}},
+                b: {{$riwayat_pernah_2024}}
+                },
+                {
+                y: '2025',
+                a: {{$riwayat_tidak_2025}},
+                b: {{$riwayat_pernah_2025}}
+                }
+            ],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            hideHover: 'auto',
+            gridLineColor: '#eef0f2',
+            resize: true,
+            barSizeRatio: 0.4,
+            labels: ['Tidak Pernah', 'Pernah']
+            });
+        }
+        
+        });
+    </script>
+@endsection
 @stop

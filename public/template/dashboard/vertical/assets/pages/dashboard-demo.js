@@ -12,7 +12,7 @@ $(function() {
       barColors: ['#ebeef1', '#00c2b2'],
       data: [
         {
-          y: '2010',
+          y: 'Januari',
           a: 80,
           b: 100
         },
@@ -57,7 +57,7 @@ $(function() {
         b: 190
       },
       {
-        y: '2019',
+        y: '2023',
         a: 120,
         b: 140
       }

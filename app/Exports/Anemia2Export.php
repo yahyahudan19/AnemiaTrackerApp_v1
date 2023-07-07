@@ -7,7 +7,7 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class AnemiaExport implements FromCollection,WithMapping, WithHeadings
+class Anemia2Export implements FromCollection,WithMapping, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -20,7 +20,6 @@ class AnemiaExport implements FromCollection,WithMapping, WithHeadings
     {
         return [
             $data_anemia->siswa->nama_siswa,
-            $data_anemia->siswa->nis_siswa,
             $data_anemia->siswa->umur_siswa,
             $data_anemia->tinggi_anemia,
             $data_anemia->berat_anemia,    
@@ -32,7 +31,6 @@ class AnemiaExport implements FromCollection,WithMapping, WithHeadings
     {
         return [
             'Nama',
-            'NIS',
             'Umur',
             'Tinggi (cm)',
             'Berat (Kg)',

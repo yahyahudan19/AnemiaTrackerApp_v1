@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama_siswa');
             $table->string('nis_siswa')->unique();
             $table->string('ttl_siswa');
+            $table->string('umur_siswa');
             $table->text('alamat_siswa');
             $table->enum('jenisk_siswa', ['Laki-Laki', 'Perempuan']);
             $table->string('ayah_siswa');

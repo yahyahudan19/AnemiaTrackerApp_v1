@@ -171,10 +171,19 @@ Siswa Management | Anemia Tracker App v1.0
                                         </div>
                                       </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-8 mb-3">
                                     <label for="validationCustom02">Nama Lengkap</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" placeholder="Nama Siswa" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                          Silahkan di isi terlebih dahulu !
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationCustom02">Umur</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="umur_siswa" name="umur_siswa_update" placeholder="20" aria-describedby="inputGroupPrepend" required>
                                         <div class="invalid-feedback">
                                           Silahkan di isi terlebih dahulu !
                                         </div>
@@ -281,10 +290,19 @@ Siswa Management | Anemia Tracker App v1.0
                                         </div>
                                       </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-8 mb-3">
                                     <label for="validationCustom02">Nama Lengkap</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="nama_siswa" name="nama_siswa_update" placeholder="Nama Siswa" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                          Silahkan di isi terlebih dahulu !
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationCustom02">Umur</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="umur_siswa" name="umur_siswa_update" placeholder="20" aria-describedby="inputGroupPrepend" required>
                                         <div class="invalid-feedback">
                                           Silahkan di isi terlebih dahulu !
                                         </div>
@@ -369,7 +387,7 @@ Siswa Management | Anemia Tracker App v1.0
                                     <th>TTL</th>
                                     {{-- <th>Alamat</th> --}}
                                     <th>Jenis Kelamin</th>
-                                    <th>Nama Ayah</th>
+                                    <th>Umur</th>
                                     <th>Nama Ibu</th>
                                     <th>Action</th>
                                 </tr>
@@ -386,7 +404,7 @@ Siswa Management | Anemia Tracker App v1.0
                                     <td>{{$data->ttl_siswa}}</td>
                                     {{-- <td>{{$data->alamat_siswa}}</td> --}}
                                     <td>{{$data->jenisk_siswa}}</td>
-                                    <td>{{$data->ayah_siswa}}</td>
+                                    <td>{{$data->umur_siswa}} Tahun</td>
                                     <td>{{$data->ibu_siswa}}</td>
                                     <td>
                                         {{-- <a href="#" class="btn btn-success btn-rounded btn-sm">Detail <i class="mdi mdi-eye-circle"></i></a> --}}
@@ -444,6 +462,7 @@ Siswa Management | Anemia Tracker App v1.0
                         $("input[name='id_siswa_update']").val(data.siswa.id_siswa);
                         $("input[name='nama_siswa_update']").val(data.siswa.nama_siswa);
                         $("input[name='nis_siswa_update']").val(data.siswa.nis_siswa);
+                        $("input[name='umur_siswa_update']").val(data.siswa.umur_siswa);
                         $("input[name='ttl_siswa_update']").val(data.siswa.ttl_siswa);
                         $("textarea[name='alamat_siswa_update']").val(data.siswa.alamat_siswa);
                         $("input[name='ayah_siswa_update']").val(data.siswa.ayah_siswa);

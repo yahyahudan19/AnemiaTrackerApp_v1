@@ -2,27 +2,54 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\AnemiaExport;
+use App\Exports\AnemiasExport;
 use App\Models\Anemia;
 use App\Models\Edukasi;
 use App\Models\Siswa;
 use App\Models\User;
+use Carbon\Carbon;
+use Dompdf\Dompdf;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
 use PDO;
 use Pdf;
 use PhpParser\Node\Stmt\TryCatch;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Str;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {   
     // ================ Dashboard Admin ================ //
     // Views 
     public function index(){
-        return view('admin.index');
+
+        $anemia = Anemia::all()->count();
+        $edukasi = Edukasi::all()->count();
+        $siswa = Siswa::all()->count();
+
+        $data_edukasi_terbaru = Edukasi::latest()->first();
+
+        $riwayat_pernah_2023 = Anemia::where('riwayat_anemia','Pernah')->whereYear('created_at',"2023")->get()->count();
+        $riwayat_tidak_2023 = Anemia::where('riwayat_anemia','Tidak Pernah')->whereYear('created_at',"2023")->get()->count();
+
+        $riwayat_pernah_2024 = Anemia::where('riwayat_anemia','Pernah')->whereYear('created_at',"2024")->get()->count();
+        $riwayat_tidak_2024 = Anemia::where('riwayat_anemia','Tidak Pernah')->whereYear('created_at',"2024")->get()->count();
+
+        $riwayat_pernah_2025 = Anemia::where('riwayat_anemia','Pernah')->whereYear('created_at',"2025")->get()->count();
+        $riwayat_tidak_2025 = Anemia::where('riwayat_anemia','Tidak Pernah')->whereYear('created_at',"2025")->get()->count();
+
+        return view('admin.index',compact(
+            'anemia','edukasi','siswa','data_edukasi_terbaru',
+            'riwayat_pernah_2023','riwayat_tidak_2023',
+            'riwayat_pernah_2024','riwayat_tidak_2024',
+            'riwayat_pernah_2025','riwayat_tidak_2025',
+        ));
     }
 
     // ================  Anemia Management ================ // 
@@ -58,7 +85,7 @@ class AdminController extends Controller
             }
         }else{ 
             // If exist 
-            Alert::error('Wah Gagal ! ','Data Anemia Gagal ditambahkan !');
+            Alert::error('Wah Gagal ! ','Data Anemia sudah Ada !');
             return redirect()->back();
         }
         
@@ -101,7 +128,27 @@ class AdminController extends Controller
     // Export PDF
     public function anemiaExportPDF(){
 
-       
+        $data_anemia = Anemia::all();
+
+        $pdf = new Dompdf();
+        $pdf->loadHtml(View::make('admin.anemia.export')->with('data_anemia',$data_anemia));
+        $pdf->render();
+
+        $tanggal = date('d-m-Y');
+        $judul = "Laporan Deteksi Anemia Remaja Tahun 2023 per-$tanggal.pdf";
+        $pdf->stream($judul);
+    }
+    // Export PDF Page
+    public function anemiaExportPage(){
+
+        $data_anemia = Anemia::all();
+
+        return view('admin.anemia.export',compact('data_anemia'));
+    }
+    // Export Exce;
+    public function anemiaExportExcel(){
+        $tanggal =  Carbon::now()->locale('id_ID')->isoFormat('dddd, D MMMM Y');
+        return Excel::download(new AnemiasExport, "Laporan Deteksi Anemia per-$tanggal.xlsx");
     }
 
     // ================ Edukasi Management ================ // 
@@ -326,8 +373,24 @@ class AdminController extends Controller
         
     }
     // Delete
-    public function userDelete(){
+    public function userDelete($id){
 
+        $data_user = User::findOrFail($id);
+        $data_siswa = Siswa::where('user_id',$id);
+        
+        if($data_siswa == NULL){
+            try {
+                $data_user->delete($data_user);
+                Alert::success('Siap, Berhasil ! ','Data Siswa berhasil dihapus !');
+                return redirect()->back();
+            } catch (QueryException $e) {
+                Alert::error('Wah Gagal ! ','Data Siswa Gagal dihapus !');
+                return redirect()->back();
+            }
+        }else{
+            Alert::error('Gagal Dihapus ! ','Hapus dari Menu Siswa Ya !');
+            return redirect()->back();
+        }
     }
 
 
@@ -444,7 +507,7 @@ class AdminController extends Controller
 
         } catch (QueryException $e) {
             
-            Alert::error('Wah Gagal ! ','Data Siswa Gagal dihapus !');
+            Alert::error('Wah Gagal ! ','Hapus data di menu Anemia ya');
             return redirect()->back();
 
         }

@@ -63,20 +63,20 @@ Edukasi Management | Anemia Tracker App v1.0
                 </div><!-- end card-->
             </div> <!-- end col-->
 
-            <div class="col-md-6 col-xl-4">
+            <div class="col-md-6 col-xl-2">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4">
-                            <span class="badge badge-soft-warning float-right">Tambah, Import atau Export</span>
+                            <span class="badge badge-soft-warning float-right">Tambah Data</span>
                             <h5 class="card-title mb-0">Action :</h5>
                         </div>
-                        <div class="row d-flex align-items-center mb-6">
-                            <div class="col-4">
+                        <div class="row d-flex align-items-center mb-12">
+                            <div class="col-12">
                                 <h2 class="d-flex align-items-center mb-0">
                                     <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#modalTambahEdukasi"><i class="mdi mdi-library-plus"></i>Tambah Data</button>
                                 </h2>
                             </div>
-                            <div class="col-4">
+                            {{-- <div class="col-4">
                                 <h2 class="d-flex align-items-center mb-0">
                                     <button type="button" class="btn btn-warning waves-effect waves-light"><i class="mdi mdi-file-excel-box"></i>Export Data</button>
                                 </h2>
@@ -85,7 +85,7 @@ Edukasi Management | Anemia Tracker App v1.0
                                 <h2 class="d-flex align-items-center mb-0">
                                     <button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-file-excel"></i>Import Data</button>
                                 </h2>
-                            </div>
+                            </div> --}}
                         </div>
                         <br>
                         <div class="progress shadow-sm" style="height: 5px;">

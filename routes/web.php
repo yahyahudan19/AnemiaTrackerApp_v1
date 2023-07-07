@@ -33,7 +33,9 @@ Route::middleware(['auth','role:Administrator'])->group(function() {
     Route::put('/admin/anemia/update',[AdminController::class,'anemiaUpdate']); // Anemia Update Data
     Route::get('/admin/anemia/delete/{id}',[AdminController::class,'anemiaDelete']); // Anemia Delete Data
     Route::post('/admin/anemia/detail',[AdminController::class,'anemiaDetail'])->name('getAnemiaID'); // Anemia Get Detail Data  
-    Route::get('/admin/anemia/export',[AdminController::class,'anemiaExportPDF']); // Anemia Export PDF
+    Route::get('/admin/anemia/export',[AdminController::class,'anemiaExportPage']); // Anemia Export PDF
+    Route::get('/admin/anemia/excel',[AdminController::class,'anemiaExportExcel']); // Anemia Export Excel
+    // Route::get('/admin/anemia/export',[AdminController::class,'anemiaExportPDF']); // Anemia Export PDF
     
 
     // =========== Edukasi Management =========== //

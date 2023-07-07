@@ -87,14 +87,14 @@ Anemia Management | Anemia Tracker App v1.0
                 </div><!-- end card-->
             </div> <!-- end col-->
 
-            <div class="col-md-6 col-xl-4">
+            <div class="col-md-12 col-xl-5">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4">
                             <span class="badge badge-soft-warning float-right">Tambah atau Export</span>
                             <h5 class="card-title mb-0">Action :</h5>
                         </div>
-                        <div class="row d-flex align-items-center mb-6">
+                        <div class="row d-flex align-items-center mb-0">
                             <div class="col-4">
                                 <h2 class="d-flex align-items-center mb-0">
                                     <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#modalTambahAnemia"><i class="mdi mdi-library-plus"></i>Tambah Data</button>
@@ -102,14 +102,14 @@ Anemia Management | Anemia Tracker App v1.0
                             </div>
                             <div class="col-4">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    <button type="button" class="btn btn-warning waves-effect waves-light"><i class="mdi mdi-file-excel-box"></i>Export Data</button>
+                                    <a href="/admin/anemia/export" target="_blank" class="btn btn-warning waves-effect waves-light"><i class="mdi mdi-pdf-box"></i>Export PDF</a>
                                 </h2>
                             </div>
-                            {{-- <div class="col-4">
+                            <div class="col-4">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    <button type="button" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-file-excel"></i>Import Data</button>
+                                    <a href="/admin/anemia/excel" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-file-excel"></i>Export Excel</a>
                                 </h2>
-                            </div> --}}
+                            </div>
                         </div>
                         <br>
                         <div class="progress shadow-sm" style="height: 5px;">
