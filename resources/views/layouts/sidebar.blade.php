@@ -47,12 +47,16 @@
                 </li>
                 <li class="menu-title">Menu Lainnya</li>
 
-                <li>
+                {{-- <li>
                     <a href="/siswa/anemia" class="waves-effect"><i class="mdi mdi-medical-bag"></i><span>Anemia</span></a>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="/siswa/edukasi" class="waves-effect"><i class="mdi mdi-youtube"></i><span>Edukasi</span></a>
+                </li>
+                <li class="menu-title">USer Management</li>
+                <li>
+                    <a href="/siswa/profile" class="waves-effect"><i class="mdi mdi-account-circle-outline"></i><span>Profile</span></a>
                 </li>
                 @endif
 

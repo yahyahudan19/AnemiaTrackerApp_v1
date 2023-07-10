@@ -93,7 +93,7 @@ Siswa Management | Anemia Tracker App v1.0
                 </div><!-- end card-->
             </div> <!-- end col--> --}}
 
-            <div class="col-md-6 col-xl-4">
+            <div class="col-md-6 col-xl-5">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4">

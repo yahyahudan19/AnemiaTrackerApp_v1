@@ -369,8 +369,24 @@ class AdminController extends Controller
         }
     }
     // Update
-    public function userUpdate(){
-        
+    public function userUpdatePassword(Request $request){
+
+        // dd($request->all());
+
+        $user = User::where('id',$request->id_update)->get()->first();
+
+        // dd($user->id);
+
+        if($user == NULL){
+            Alert::error('Update Gagal','Silahkan Update Password Lain !');
+            return redirect()->back(); 
+        }else{
+            $user->update([
+                "password" => Hash::make($request->password)
+            ]);
+            Alert::success('Update Password Berhasil','Silahkan Coba Login Ya!');
+            return redirect()->back(); 
+        }
     }
     // Delete
     public function userDelete($id){

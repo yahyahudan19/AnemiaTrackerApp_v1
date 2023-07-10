@@ -60,7 +60,7 @@ Route::middleware(['auth','role:Administrator'])->group(function() {
 
     // =========== User Management =========== //
     Route::get('/admin/user',[AdminController::class,'userPage']); //User Management Views
-    Route::put('/admin/user/update/{id}',[AdminController::class,'userUpdate']); // Siswa Update Data
+    Route::put('/admin/user/update',[AdminController::class,'userUpdatePassword']); // Siswa Update Password
     Route::get('/admin/user/delete/{id}',[AdminController::class,'userDelete']); // Siswa Delete Data
     Route::post('/admin/user/detail',[AdminController::class,'userDetail'])->name('getUserID'); // Siswa Detail Views
 
@@ -71,11 +71,17 @@ Route::middleware(['auth','role:Siswa'])->group(function() {
     Route::get('/siswa',[SiswaController::class,'index'])->name('index'); //Dashboard Siswa Views
     Route::get('/siswa/profile',[SiswaController::class,'profileSiswa'])->name('profile'); //Dashboard Siswa Views
 
-    Route::get('/siswa/anemia',[SiswaController::class,'anemiaPage']); //Anemia Views
-
+    Route::post('/siswa/anemia/create',[SiswaController::class,'anemiaCreate']); //Anemia Views
+    Route::PUT('/siswa/anemia/update',[SiswaController::class,'anemiaUpdate']); //Anemia Views
+    
+    Route::get('/siswa/edukasi/{slug}',[SiswaController::class,'edukasiDetailPage']); // Edukasi Detail Views
     Route::get('/siswa/edukasi',[SiswaController::class,'edukasiPage']); //Edukasi Views
 
     Route::get('/siswa/profile',[SiswaController::class,'profilePage']); //Profile Views
+    Route::put('/siswa/profile/update',[SiswaController::class,'profileUpdate']); //Profile Update
+
+    Route::get('/siswa/password/update',[SiswaController::class,'updatePassword']); //Password Update
+
 });
 
 //Authentication Page and Processes Routes
