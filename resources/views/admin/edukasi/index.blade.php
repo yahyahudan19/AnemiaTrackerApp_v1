@@ -139,6 +139,15 @@ Edukasi Management | Anemia Tracker App v1.0
                                     </div>
                                   </div>
                                   <div class="col-md-12 mb-3">
+                                    <label for="validationCustomUsername">Link Dokumen </label>
+                                    <div class="input-group">
+                                      <input type="text" class="form-control" id="dokumen_edukasi" name="dokumen_edukasi" placeholder="https://linkpdfnya.com" aria-describedby="inputGroupPrepend" required>
+                                      <div class="invalid-feedback">
+                                         Silahkan di isi terlebih dahulu !
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12 mb-3">
                                     <label for="validationCustomUsername">Upload Poster </label>
                                     <div class="input-group">
                                         <input type="file" class="dropify" data-height="200" id="poster_edukasi" name="poster_edukasi" required/>
@@ -200,6 +209,15 @@ Edukasi Management | Anemia Tracker App v1.0
                                     </div>
                                   </div>
                                   <div class="col-md-12 mb-3">
+                                    <label for="validationCustomUsername">Link Dokumen </label>
+                                    <div class="input-group">
+                                      <input type="text" class="form-control" id="dokumen_edukasi" name="dokumen_edukasi" placeholder="https://linkpdfnya.com" aria-describedby="inputGroupPrepend" required>
+                                      <div class="invalid-feedback">
+                                         Silahkan di isi terlebih dahulu !
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12 mb-3">
                                     <label for="validationCustomUsername">Upload Poster </label>
                                     <div class="input-group">
                                         <input type="file" class="dropify" data-height="200" id="poster_edukasi" name="poster_edukasi"/>
@@ -238,7 +256,7 @@ Edukasi Management | Anemia Tracker App v1.0
                                     <th>#</th>
                                     <th>Judul</th>
                                     <th>Poster</th>
-                                    <th>Video</th>
+                                    {{-- <th>Video</th> --}}
                                     <th>Tanggal</th>
                                     <th>Action</th>
                                 </tr>
@@ -255,9 +273,9 @@ Edukasi Management | Anemia Tracker App v1.0
                                         <img src="/poster/{{$data->poster_edukasi}}" alt="image"
                                         class="img-fluid img-thumbnail" width="100"/>
                                     </td>
-                                    <td>
+                                    {{-- <td>
                                         <a href="{{$data->video_edukasi}}" target="_blank" class="btn btn-success btn-rounded btn-sm"><i class="mdi mdi-youtube"></i>Lihat Video</a> 
-                                    </td>
+                                    </td> --}}
                                     <td>{{ \Carbon\Carbon::parse($data->created_at)->locale('id_ID')->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>
                                         <a href="/admin/edukasi/{{$data->slug}}" class="btn btn-success btn-rounded btn-sm">Detail <i class="mdi mdi-eye-circle"></i></a>
@@ -328,7 +346,7 @@ Edukasi Management | Anemia Tracker App v1.0
                         $("input[name='id_edukasi_update']").val(data.edukasi.id_edukasi);
                         $("input[name='judul_edukasi']").val(data.edukasi.judul_edukasi);
                         $("input[name='video_edukasi']").val(data.edukasi.video_edukasi);
-                        // $("input[name='poster_edukasi']").val(data.edukasi.poster_edukasi);
+                        $("input[name='dokumen_edukasi']").val(data.edukasi.dokumen_edukasi);
                         $("textarea[name='detail_edukasi']").val(data.edukasi.detail_edukasi);
                     }
                 });

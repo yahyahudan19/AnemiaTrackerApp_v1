@@ -80,7 +80,7 @@ Route::middleware(['auth','role:Siswa'])->group(function() {
     Route::get('/siswa/profile',[SiswaController::class,'profilePage']); //Profile Views
     Route::put('/siswa/profile/update',[SiswaController::class,'profileUpdate']); //Profile Update
 
-    Route::get('/siswa/password/update',[SiswaController::class,'updatePassword']); //Password Update
+    Route::post('/siswa/password/update',[SiswaController::class,'passwordUpdate']); //Password Update
 
 });
 

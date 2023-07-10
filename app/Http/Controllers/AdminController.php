@@ -230,6 +230,7 @@ class AdminController extends Controller
                 "judul_edukasi" => $request->judul_edukasi,
                 "poster_edukasi" => $request->file('poster_edukasi')->getClientOriginalName(),
                 "video_edukasi" => $finalLink,
+                "dokumen_edukasi" => $request->dokumen_edukasi,
                 "detail_edukasi" => $request->detail_edukasi,
                 "slug" => Str::slug($request->judul_edukasi, '-')
             ]);
@@ -259,6 +260,7 @@ class AdminController extends Controller
              $edukasi->update([
                  "judul_edukasi" => $request->judul_edukasi,
                  "video_edukasi" => $finalLink,
+                 "dokumen_edukasi" => $request->dokumen_edukasi,
                  "detail_edukasi" => $request->detail_edukasi,
                  "slug" => Str::slug($request->judul_edukasi, '-')
              ]);
@@ -305,6 +307,7 @@ class AdminController extends Controller
             "judul_edukasi" => $request->judul_edukasi,
             "poster_edukasi" => $request->file('poster_edukasi')->getClientOriginalName(),
             "video_edukasi" => $finalLink,
+            "dokumen_edukasi" => $request->dokumen_edukasi,
             "detail_edukasi" => $request->detail_edukasi,
             "slug" => Str::slug($request->judul_edukasi, '-')
          ]);

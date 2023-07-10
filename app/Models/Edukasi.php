@@ -11,5 +11,5 @@ class Edukasi extends Model
 
     protected $table = 'edukasis';
     protected $primaryKey = 'id_edukasi';
-    protected $fillable = ['judul_edukasi','poster_edukasi','video_edukasi','detail_edukasi','slug'];
+    protected $fillable = ['judul_edukasi','poster_edukasi','dokumen_edukasi','video_edukasi','detail_edukasi','slug'];
 }

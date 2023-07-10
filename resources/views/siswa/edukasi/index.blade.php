@@ -86,7 +86,7 @@ Edukasi Management | Anemia Tracker App v1.0
                                     <th>#</th>
                                     <th>Judul</th>
                                     <th>Poster</th>
-                                    <th>Video</th>
+                                    {{-- <th>Video</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -102,9 +102,9 @@ Edukasi Management | Anemia Tracker App v1.0
                                         <img src="/poster/{{$data->poster_edukasi}}" alt="image"
                                         class="img-fluid img-thumbnail" width="500"/>
                                     </td>
-                                    <td>
+                                    {{-- <td>
                                         <a href="{{$data->video_edukasi}}" target="_blank" class="btn btn-success btn-rounded btn-sm"><i class="mdi mdi-youtube"></i>Lihat Video</a> 
-                                    </td>
+                                    </td> --}}
                                     <td>
                                         <a href="/siswa/edukasi/{{$data->slug}}" class="btn btn-success btn-rounded btn-sm">Detail <i class="mdi mdi-eye-circle"></i></a>
                                     </td>

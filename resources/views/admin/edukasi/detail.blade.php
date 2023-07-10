@@ -39,7 +39,7 @@ Detail Edukasi | {{$data_edukasi->slug}} | Anemia Tracker App v1.0
         </div>
         <!-- end page title -->
         <div class="row">
-            <div class="col-12">
+            <div class="col-10">
                 <div class="card">
                     <div class="card-body">
                         <div class="media">
@@ -47,6 +47,19 @@ Detail Edukasi | {{$data_edukasi->slug}} | Anemia Tracker App v1.0
                                 <h3 class="mt-0 mb-1">{{$data_edukasi->judul_edukasi}}</h3>
                                 <br>
                                 {{$data_edukasi->detail_edukasi}}
+                            </div>
+                        </div> 
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col -->
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1">Link Dokumen :</h5>
+                                <br>
+                                <a href="{{$data_edukasi->dokumen_edukasi}}" target="_blank" class="btn btn-warning btn-lg waves-effect waves-light"><i class="mdi mdi-file-eye"></i> Lihat Dokumen</a>
                             </div>
                         </div> 
                     </div> <!-- end card-body-->
