@@ -32,8 +32,8 @@
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center mb-5">
-                                            <a href="index.html" class="text-dark font-size-22 font-family-secondary">
-                                                <i class="mdi mdi-alpha-x-circle"></i> <b>AnemiaTrackerApp</b>
+                                            <a href="#" class="text-dark font-size-22 font-family-secondary">
+                                                <i class="mdi mdi-alpha-x-circle"></i> <b>SI MANJA</b>
                                             </a>
                                         </div>
                                         <h1 class="h5 mb-1">Halo, Selamat Datang Kembali !</h1>

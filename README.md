@@ -1,6 +1,6 @@
 # AnemiaTrackerApp
 
-![AnemiaTrackerApp](anemiatrackerapp.png)
+![AnemiaTrackerApp](SI MANJApng)
 
 AnemiaTrackerApp adalah aplikasi berbasis website yang dibangun dengan menggunakan framework Laravel 10. Aplikasi ini dirancang khusus untuk melakukan tracking terhadap anemia di kalangan remaja. Dengan menggunakan AnemiaTrackerApp, pengguna dapat memantau dan menganalisis data terkait anemia, serta memperoleh informasi yang berguna dalam upaya pencegahan dan penanganan anemia.
 
@@ -31,7 +31,7 @@ Berikut adalah langkah-langkah untuk menginstal AnemiaTrackerApp di proyek Larav
 1. Clone repositori ini ke direktori proyek Laravel Anda:
 
    ```bash
-   git clone https://github.com/username/AnemiaTrackerApp.git
+   git clone https://github.com/username/SI MANJAgit
    ```
 
 2. Masuk ke direktori proyek:
@@ -76,7 +76,7 @@ Berikut adalah langkah-langkah untuk menginstal AnemiaTrackerApp di proyek Larav
 
 ## Kontribusi
 
-Kami senang menerima kontribusi dari komunitas untuk meningkatkan AnemiaTrackerApp. Jika Anda ingin berkontribusi, silakan ikuti langkah
+Kami senang menerima kontribusi dari komunitas untuk meningkatkan SI MANJA Jika Anda ingin berkontribusi, silakan ikuti langkah
 
 -langkah berikut:
 

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Edukasi Management | Anemia Tracker App v1.0
+Edukasi Management | SI MANJA App v1.0
 @endsection
 
 @section('plugins')

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-User Management | Anemia Tracker App v1.0
+User Management | SI MANJA App v1.0
 @endsection
 
 @section('plugins')

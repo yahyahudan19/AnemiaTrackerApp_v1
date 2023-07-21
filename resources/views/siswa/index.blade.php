@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-Dashboard | Anemia Tracker App v1.0
+Dashboard | SI MANJA App v1.0
 @endsection
 @section('content')
 
@@ -184,7 +184,7 @@ Dashboard | Anemia Tracker App v1.0
                                             </select>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                        <label for="validationTooltip04">Pernah Minum Obat Anemia</label>
+                                        <label for="validationTooltip04">Pernah Minum Tablet Tambah Darah</label>
                                             <select class="form-control" id="minum_anemia" name="minum_anemia">
                                                 <option value="Pernah">Pernah</option>
                                                 <option value="Tidak Pernah">Tidak Pernah</option>
@@ -253,7 +253,7 @@ Dashboard | Anemia Tracker App v1.0
                                             </select>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                        <label for="validationTooltip04">Pernah Minum Obat Anemia</label>
+                                        <label for="validationTooltip04">Pernah Minum Obat Tambah Darah</label>
                                             <select class="form-control" id="minum_anemia" name="minum_anemia">
                                                 <option value="Pernah" {{ $cekanemiasiswa->minum_anemia == 'Pernah' ? 'selected' : '' }}>Pernah</option>
                                                 <option value="Tidak Pernah" {{ $cekanemiasiswa->minum_anemia == 'Tidak Pernah' ? 'selected' : '' }}>Tidak Pernah</option>

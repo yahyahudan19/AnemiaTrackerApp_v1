@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-Dashboard | Anemia Tracker App v1.0
+Dashboard | SI MANJA App v1.0
 @endsection
 @section('content')
 <div class="page-content">

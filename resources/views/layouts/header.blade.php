@@ -11,7 +11,7 @@
              <div class="dropdown d-none d-sm-inline-block">
                 <button type="button" class="btn header-item waves-effect"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="mdi mdi-medical-bag"></i> Halo Selamat Datang di AnemiaTracker App !
+                    <i class="mdi mdi-medical-bag"></i> Halo Selamat Datang di SI MANJA !
                 </button>
                 {{-- <div class="dropdown-menu">
 

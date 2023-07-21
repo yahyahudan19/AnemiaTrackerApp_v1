@@ -1,7 +1,7 @@
 @extends('layouts.blank')
 
 @section('title')
-Export Anemia PDF | Anemia Tracker App v1.0
+Export Anemia PDF | SI MANJA App v1.0
 @endsection
 @section('content')
 <div class="page-content">

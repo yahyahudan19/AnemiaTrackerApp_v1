@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Detail Edukasi | {{$data_edukasi->slug}} | Anemia Tracker App v1.0
+Detail Edukasi | {{$data_edukasi->slug}} | SI MANJA App v1.0
 @endsection
 
 @section('plugins')

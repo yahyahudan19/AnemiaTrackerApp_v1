@@ -7,7 +7,7 @@
             <a href="index.html" class="logo">
                 <i class="mdi mdi-album"></i>
                 <span>
-                    AnemiaTrack
+                    SI MANJA
                 </span>
             </a>
         </div>

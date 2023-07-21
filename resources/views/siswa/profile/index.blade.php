@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-Profile | Anemia Tracker App v1.0
+Profile | SI MANJA App v1.0
 @endsection
 @section('content')
     <div class="page-content">

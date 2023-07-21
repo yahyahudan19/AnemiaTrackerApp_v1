@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Siswa Management | Anemia Tracker App v1.0
+Siswa Management | SI MANJA App v1.0
 @endsection
 
 @section('plugins')
@@ -183,7 +183,7 @@ Siswa Management | Anemia Tracker App v1.0
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom02">Umur</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="umur_siswa" name="umur_siswa_update" placeholder="20" aria-describedby="inputGroupPrepend" required>
+                                        <input type="text" class="form-control" id="umur_siswa" name="umur_siswa" placeholder="20" aria-describedby="inputGroupPrepend" required>
                                         <div class="invalid-feedback">
                                           Silahkan di isi terlebih dahulu !
                                         </div>
@@ -311,7 +311,7 @@ Siswa Management | Anemia Tracker App v1.0
                                 <div class="col-md-12 mb-3">
                                     <label for="validationCustomUsername">Alamat Siswa</label>
                                     <div class="input-group">
-                                        <textarea class="form-control" id="alamat_siswa" name="alamat_siswa" rows="3" placeholder="Alamat Siswa" required></textarea>
+                                        <textarea class="form-control" id="alamat_siswa" name="alamat_siswa_update" rows="3" placeholder="Alamat Siswa" required></textarea>
                                     </div>
                                 </div> 
                                 <div class="col-md-6 mb-3">

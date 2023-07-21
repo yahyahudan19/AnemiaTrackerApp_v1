@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Anemia Management | Anemia Tracker App v1.0
+Anemia Management | SI MANJA App v1.0
 @endsection
 
 @section('plugins')
@@ -182,7 +182,7 @@ Anemia Management | Anemia Tracker App v1.0
                                     </select>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                  <label for="validationTooltip04">Pernah Minum Obat Anemia</label>
+                                  <label for="validationTooltip04">Pernah Minum Tablet Tambah Darah</label>
                                     <select class="form-control" id="minum_anemia" name="minum_anemia">
                                         <option value="Pernah">Pernah</option>
                                         <option value="Tidak Pernah">Tidak Pernah</option>
@@ -263,7 +263,7 @@ Anemia Management | Anemia Tracker App v1.0
                                     </select>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                  <label for="validationTooltip04">Pernah Minum Obat Anemia</label>
+                                  <label for="validationTooltip04">Pernah Minum Tablet Tambah Darah</label>
                                     <select class="form-control" id="minum_anemia" name="minum_anemia">
                                         <option value="Pernah">Pernah</option>
                                         <option value="Tidak Pernah">Tidak Pernah</option>
@@ -304,7 +304,7 @@ Anemia Management | Anemia Tracker App v1.0
                                     <th>Tinggi (cm)</th>
                                     <th>Berat (Kg)</th>
                                     <th>Riwayat Anemia</th>
-                                    <th>Minum Obat Anemia</th>
+                                    <th>Minum Obat Tambah Darah</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
